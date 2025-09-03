@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>rawmilk.ai — Find Raw Milk Near You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#0b0c10; --card:#12141a; --muted:#9aa3b2; --text:#e8eef9; --accent:#4f8cff; --ring:#355fcc; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: var(--bg); color: var(--text); }
+    header.topbar { position:sticky; top:0; backdrop-filter: blur(10px); background: rgba(11,12,16,.7); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 16px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px; }
+    .brand .dot { width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow:0 0 20px var(--accent); }
+    .searchbar { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    select, input, button {
+      background:#0f1117; color:var(--text); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:10px 12px; font-size:16px;
+      outline: none; transition: border .2s, box-shadow .2s;
+    }
+    select:focus, input:focus, button:focus { border-color: var(--ring); box-shadow: 0 0 0 3px rgba(79,140,255,.25); }
+    button { background: linear-gradient(90deg, var(--accent), #7aa5ff); border:none; cursor:pointer; font-weight:600; }
+    main { padding: 24px 0; }
+    .count { color: var(--muted); margin-bottom: 8px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px; }
+    .card {
+      background: var(--card); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:14px; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .1s ease, box-shadow .1s ease, border-color .2s;
+    }
+    .card:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.16); }
+    .name { font-weight:700; margin-bottom:6px; }
+    .meta { color: var(--muted); font-size: 14px; line-height:1.3; }
+    .row { display:flex; gap:14px; margin-top:10px; align-items:center; }
+    .chip { font-size:12px; color:#d5e3ff; background: rgba(79,140,255,.18); padding:4px 8px; border-radius:999px; border:1px solid rgba(79,140,255,.35); }
+    a.link { color:#d5e3ff; text-decoration:none; border-bottom:1px dashed rgba(213,227,255,.4); }
+    footer { color: var(--muted); padding: 24px 0 40px; text-align:center; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand"><span class="dot"></span> rawmilk.ai</div>
+      <div class="searchbar">
+        <label>
+          <span class="meta">State</span><br/>
+          <select id="state">
+            <option value="">All</option>
+            <option>MA</option>
+          </select>
+        </label>
+        <label style="flex:1 1 260px">
+          <span class="meta">Search</span><br/>
+          <input id="q" placeholder="Name, city, address…" />
+        </label>
+        <div style="align-self:end"><button id="go">Search</button></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="count" class="count">Loading…</div>
+    <div id="list" class="grid"></div>
+  </main>
+
+  <footer class="wrap">
+    Simple directory of raw-milk farms & pickup points. Data from public sources.
+  </footer>
+
+  <script>
+    function esc(s){return (s??'').toString().replace(/[&<>"]/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m]));}
+
+    async function load() {
+      const state = document.getElementById('state').value;
+      const q = document.getElementById('q').value.trim();
+      const params = new URLSearchParams();
+      if (state) params.set('state', state);
+      if (q) params.set('q', q);
+
+      const res = await fetch('/api/locations?' + params.toString());
+      const data = await res.json();
+
+      document.getElementById('count').textContent = `Found ${data.count} location${data.count===1?'':'s'}`;
+      const list = document.getElementById('list');
+      list.innerHTML = '';
+
+      data.locations.forEach(loc => {
+        const addr = [loc.address, loc.city, loc.state, loc.zip].filter(Boolean).join(', ');
+        const phone = loc.phone ? `<a class="link" href="tel:${esc(loc.phone)}">Call</a>` : '';
+        const web = loc.website ? `<a class="link" href="${esc(loc.website)}" target="_blank" rel="noopener">Website</a>` : '';
+        const src = loc.source?.name ? `<span class="chip">${esc(loc.source.name)}</span>` : '';
+        const type = loc.type ? `<span class="chip">${esc(loc.type)}</span>` : '';
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="name">${esc(loc.name)}</div>
+          <div class="meta">${esc(addr)}</div>
+          <div class="row">
+            ${type} ${src} ${phone} ${web}
+          </div>`;
+        list.appendChild(card);
+      });
+    }
+
+    document.getElementById('go').onclick = load;
+    load();
+  </script>
+</body>
+</html>
