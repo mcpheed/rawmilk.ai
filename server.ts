@@ -1,21 +1,19 @@
 import express from 'express';
 import path from 'path';
-import { locationsRouter } from './src/api/locations';
+import { nearRouter } from './src/api/near';
 
 const app = express();
 
 // static files
 app.use(express.static(path.join(process.cwd(), 'public')));
 
-// API
-app.use('/api/locations', locationsRouter);
+// API: one simple endpoint
+app.use('/api/near', nearRouter);
 
-// fallback to index.html
+// root serves the minimal UI
 app.get('/', (_req, res) => {
   res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`rawmilk.ai server running at http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`rawmilk.ai listening on http://localhost:${PORT}`));
