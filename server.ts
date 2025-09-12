@@ -4,13 +4,9 @@ import { nearRouter } from './src/api/near';
 
 const app = express();
 
-// static files
 app.use(express.static(path.join(process.cwd(), 'public')));
-
-// API: one simple endpoint
 app.use('/api/near', nearRouter);
 
-// root serves the minimal UI
 app.get('/', (_req, res) => {
   res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });

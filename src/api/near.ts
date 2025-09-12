@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import data from '../../data/locations.json';
 import { geocodeAddress, haversineKm } from '../lib/geocode';
+import { extractLocationFromText } from '../lib/ai';
 
 interface Loc {
   id: string;
@@ -16,14 +17,19 @@ interface Loc {
 
 export const nearRouter = Router();
 
+function joinAddr(l: Partial<Loc>) {
+  const parts = [l.address, l.city, l.state, l.zip].filter(Boolean);
+  return parts.join(', ');
+}
+
 /**
  * GET /api/near
- * Query:
- *   address=...  (OR lat/lng)
+ * Options:
+ *   q=free text   (AI tries to extract location)
+ *   address=...   (geocode directly)
  *   lat=..&lng=..
- * Optional:
- *   max=number (default 5)
- *   radiusKm=number (default 200)
+ *   max=5         (default 5)
+ *   radiusKm=200  (default 200)
  */
 nearRouter.get('/', async (req: Request, res: Response) => {
   const max = Math.min(50, Math.max(1, Number(req.query.max ?? 5)));
@@ -32,16 +38,34 @@ nearRouter.get('/', async (req: Request, res: Response) => {
   let lat: number | undefined;
   let lng: number | undefined;
 
+  // 1) lat/lng direct
   if (req.query.lat && req.query.lng) {
     lat = Number(req.query.lat);
     lng = Number(req.query.lng);
-  } else if (req.query.address) {
-    const g = await geocodeAddress(String(req.query.address));
+  }
+
+  // 2) AI extraction from q=
+  if ((lat == null || lng == null) && typeof req.query.q === 'string' && req.query.q.trim()) {
+    const extracted = await extractLocationFromText(req.query.q.trim());
+    if (extracted?.lat != null && extracted?.lng != null) {
+      lat = extracted.lat; lng = extracted.lng;
+    } else {
+      const addr = extracted?.address || joinAddr({ city: extracted?.city, state: extracted?.state });
+      if (addr) {
+        const g = await geocodeAddress(addr);
+        if (g) { lat = g.lat; lng = g.lng; }
+      }
+    }
+  }
+
+  // 3) address=
+  if ((lat == null || lng == null) && typeof req.query.address === 'string' && req.query.address.trim()) {
+    const g = await geocodeAddress(req.query.address.trim());
     if (g) { lat = g.lat; lng = g.lng; }
   }
 
   if (!Number.isFinite(lat as number) || !Number.isFinite(lng as number)) {
-    res.status(400).json({ error: 'Provide ?address=... or ?lat=..&lng=..' });
+    res.status(400).json({ error: 'Provide q=, address=, or lat/lng.' });
     return;
   }
 
@@ -54,5 +78,5 @@ nearRouter.get('/', async (req: Request, res: Response) => {
     .sort((a: Loc, b: Loc) => (a.distanceKm! - b.distanceKm!))
     .slice(0, max);
 
-  res.json({ count: scored.length, locations: scored });
+  res.json({ origin: here, count: scored.length, locations: scored });
 });
