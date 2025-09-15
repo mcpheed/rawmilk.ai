@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>rawmilk.ai — nearest raw milk</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  :root { --bg:#0b0c10; --card:#12141a; --muted:#9aa3b2; --text:#e8eef9; --accent:#4f8cff; }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto}
-  .wrap{max-width:720px;margin:0 auto;padding:20px}
-  h1{margin:8px 0 16px 0;font-size:22px}
-  .row{display:flex;gap:8px;flex-wrap:wrap}
-  input,button{padding:10px 12px;border-radius:10px;border:1px solid #1e2430;background:#0f1117;color:var(--text);font-size:16px}
-  button{background:var(--accent);border:none;cursor:pointer;font-weight:600}
-  .meta{color:var(--muted);font-size:14px;margin:8px 0}
-  .card{background:var(--card);border:1px solid #1e2430;border-radius:14px;padding:12px;margin:8px 0}
-  .name{font-weight:700}
-  .muted{color:var(--muted);font-size:14px}
-  a{color:#d5e3ff;text-decoration:none;border-bottom:1px dashed rgba(213,227,255,.4)}
-</style>
+  <meta charset="UTF-8" />
+  <title>rawmilk.ai — nearest raw milk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      background: #fff; color: #000;
+      font-family: system-ui, sans-serif; text-align: center;
+      padding: 3rem 1rem;
+    }
+    h1 { font-size: 3rem; margin-bottom: 2rem; font-weight: 700; }
+    .row { display:flex; justify-content:center; gap:.5rem; margin-bottom:1.5rem; flex-wrap:wrap }
+    input {
+      flex: 1 1 400px; max-width: 800px;
+      padding: 1.1rem; font-size: 1.35rem;
+      border-radius: .8rem; border: 2px solid #ddd; background:#fafafa; color:#000;
+    }
+    button {
+      padding: 1rem 1.5rem; font-size: 1.2rem;
+      border-radius: .8rem; border: none; cursor: pointer; background:#000; color:#fff;
+    }
+    button:hover { background:#444; }
+    .meta { color:#444; margin: 1rem 0; }
+    .card {
+      background:#fafafa; border:1px solid #ddd; border-radius:.8rem;
+      padding:1rem; margin:.8rem auto; max-width: 800px; text-align:left;
+      display:grid; grid-template-columns: 220px 1fr; gap:14px; align-items:center;
+    }
+    .card .map { width: 100%; aspect-ratio: 16/9; border-radius:.6rem; border:1px solid #e3e3e3; object-fit: cover; background:#eee; }
+    .card .name { font-weight:700; font-size:1.1rem; }
+    .card .row { display:flex; gap:12px; flex-wrap:wrap; margin-top:6px }
+    a { color:#0066cc; text-decoration:none }
+    a:hover { text-decoration:underline }
+    @media (max-width: 720px) {
+      .card { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>rawmilk.ai</h1>
-    <div class="row">
-      <input id="addr" placeholder="Enter your address or city" style="flex:1 1 360px" />
-      <button id="findBtn">Find</button>
-      <button id="geoBtn" title="Use my location">Use my location</button>
-    </div>
-    <div id="status" class="meta">Enter your address or use your location.</div>
-    <div id="list"></div>
+  <h1>rawmilk.ai</h1>
+  <div class="row">
+    <input id="q" placeholder="Enter city or address (e.g., Austin TX, 11 Peters Way Austin)" />
+    <button id="findBtn">Find</button>
+    <button id="geoBtn">Use my location</button>
   </div>
-
+  <p id="status" class="meta">Type a city, state, or full address to find raw milk nearby.</p>
+  <div id="list"></div>
 <script>
-const statusEl = document.getElementById('status');
-const listEl = document.getElementById('list');
+function osmStatic({lat,lng,zoom=12,w=400,h=225}) {
+  // Public OSM static maps; polite usage only.
+  const base = 'https://staticmap.openstreetmap.de/staticmap.php';
+  const markers = encodeURIComponent(`${lat},${lng},lightblue1`);
+  return `${base}?center=${lat},${lng}&zoom=${zoom}&size=${w}x${h}&markers=${markers}`;
+}
 
-function render(items){
-  listEl.innerHTML = '';
-  if (!items || !items.length){ statusEl.textContent = 'No nearby locations found.'; return; }
-  statusEl.textContent = `Found ${items.length} nearby`;
-  for (const l of items){
-    const div = document.createElement('div');
-    const addr = [l.address,l.city,l.state,l.zip].filter(Boolean).join(', ');
-    div.className='card';
-    div.innerHTML = `
-      <div class="name">${l.name}</div>
-      <div class="muted">${addr}</div>
-      <div class="muted">${(l.distanceKm||0).toFixed(1)} km away</div>
-      <div class="row" style="margin-top:6px">
-        ${l.phone ? `<a href="tel:${l.phone}">Call</a>` : ''}
-        ${l.website ? `<a href="${l.website}" target="_blank" rel="noopener">Website</a>` : ''}
+async function renderFrom(url){
+  const status = document.getElementById('status');
+  status.textContent='Searching…';
+  const res = await fetch(url);
+  const data = await res.json();
+  const list = document.getElementById('list');
+  list.innerHTML = '';
+  if (!data.locations?.length){ status.textContent='No nearby locations found.'; return; }
+  status.textContent = `Found ${data.count} nearby`;
+  data.locations.forEach(loc=>{
+    const el=document.createElement('div'); el.className='card';
+    const addr = [loc.address, loc.city, loc.state, loc.zip].filter(Boolean).join(', ');
+    const mapImg = (loc.lat!=null && loc.lng!=null)
+      ? `<img class="map" alt="map" src="${osmStatic({lat:loc.lat,lng:loc.lng,zoom:12,w:400,h:225})}"/>`
+      : `<div class="map" style="display:flex;align-items:center;justify-content:center;color:#888">No map</div>`;
+    el.innerHTML = `
+      ${mapImg}
+      <div>
+        <div class="name">${loc.name}</div>
+        <div class="meta">${addr}</div>
+        <div class="meta">Distance: ${loc.distanceKm?.toFixed(1)} km</div>
+        <div class="row">
+          ${loc.phone ? `<a href="tel:${loc.phone}">Call</a>` : ''}
+          ${loc.website ? `<a href="${loc.website}" target="_blank" rel="noopener">Website</a>` : ''}
+        </div>
       </div>
     `;
-    listEl.appendChild(div);
-  }
+    list.appendChild(el);
+  });
 }
-
-async function searchByAddress(){
-  const q = document.getElementById('addr').value.trim();
-  if (!q){ statusEl.textContent='Please enter an address or city.'; return; }
-  statusEl.textContent='Searching…';
-  const res = await fetch('/api/near?max=5&radiusKm=200&address='+encodeURIComponent(q));
-  const data = await res.json();
-  render(data.locations);
-}
-
-async function searchByGeo(){
-  if (!navigator.geolocation){ statusEl.textContent='Geolocation not supported.'; return; }
-  statusEl.textContent='Getting your location…';
-  navigator.geolocation.getCurrentPosition(async (pos)=>{
-    const { latitude, longitude } = pos.coords;
-    statusEl.textContent='Searching…';
-    const res = await fetch('/api/near?max=5&radiusKm=200&lat='+latitude+'&lng='+longitude);
-    const data = await res.json();
-    render(data.locations);
-  }, (err)=>{
-    statusEl.textContent='Could not get your location.';
-  }, { enableHighAccuracy:true, timeout:8000, maximumAge:0 });
-}
-
-document.getElementById('findBtn').onclick = searchByAddress;
-document.getElementById('geoBtn').onclick = searchByGeo;
+document.getElementById('findBtn').onclick = ()=>{
+  const q = document.getElementById('q').value.trim();
+  if (!q) { document.getElementById('status').textContent='Enter a city or address.'; return; }
+  renderFrom('/api/near?max=10&radiusKm=500&q='+encodeURIComponent(q));
+};
+document.getElementById('geoBtn').onclick = ()=>{
+  const status = document.getElementById('status');
+  if (!navigator.geolocation){ status.textContent='Geolocation not supported.'; return; }
+  status.textContent='Getting your location…';
+  navigator.geolocation.getCurrentPosition(async pos=>{
+    const {latitude, longitude} = pos.coords;
+    renderFrom(`/api/near?max=10&radiusKm=250&lat=${latitude}&lng=${longitude}`);
+  }, ()=>{ status.textContent='Could not get your location.'; });
+};
 </script>
 </body>
 </html>

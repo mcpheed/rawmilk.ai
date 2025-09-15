@@ -22,5 +22,405 @@
   "boston": {
     "lat": 42.3554334,
     "lng": -71.060511
+  },
+  "fenway park": {
+    "lat": 42.3464614,
+    "lng": -71.0970999
+  },
+  "boston, ma": {
+    "lat": 42.3554334,
+    "lng": -71.060511
+  },
+  "massachusetts": {
+    "lat": 42.3788774,
+    "lng": -72.032366
+  },
+  "fenway park, boston, ma": {
+    "lat": 42.3464614,
+    "lng": -71.0970999
+  },
+  "greenfield, ma": {
+    "lat": 42.5876342,
+    "lng": -72.6002068
+  },
+  "hadley, ma, usa": {
+    "lat": 42.3423259,
+    "lng": -72.5891221
+  },
+  "barre, ma": {
+    "lat": 42.4228006,
+    "lng": -72.1051592
+  },
+  "chase hill rd.warwick, ma": {
+    "lat": 42.6839112,
+    "lng": -72.3007813
+  },
+  "pepperell, ma": {
+    "lat": 42.6650324,
+    "lng": -71.5785924
+  },
+  "russell, ma": {
+    "lat": 42.1898446,
+    "lng": -72.8559729
+  },
+  "01255, usa": {
+    "lat": 42.0977022,
+    "lng": -73.1014489
+  },
+  "sterling, ma": {
+    "lat": 42.4374411,
+    "lng": -71.7601869
+  },
+  "sandisfield, ma": {
+    "lat": 42.1115567,
+    "lng": -73.1399665
+  },
+  "00327, usa": {
+    "lat": 30.6972412,
+    "lng": -88.1892334
+  },
+  "rowley, ma": {
+    "lat": 42.7136977,
+    "lng": -70.8818364
+  },
+  "westminster, ma": {
+    "lat": 42.5449024,
+    "lng": -71.9107903
+  },
+  "02346, usa": {
+    "lat": 41.8897448,
+    "lng": -70.9054645
+  },
+  "hawley, ma": {
+    "lat": 42.5644029,
+    "lng": -72.877557
+  },
+  "chilmark, ma": {
+    "lat": 41.343056,
+    "lng": -70.7440232
+  },
+  "03508, usa": {
+    "lat": 45.845947,
+    "lng": -88.0509948
+  },
+  "09406, usa": {
+    "lat": 30.6972412,
+    "lng": -88.1892334
+  },
+  "hadley, ma": {
+    "lat": 42.3423259,
+    "lng": -72.5891221
+  },
+  "north plain farm, ma": {
+    "lat": 54.2740908,
+    "lng": -1.2075772
+  },
+  "orange, ma": {
+    "lat": 42.5908656,
+    "lng": -72.3097766
+  },
+  "tucker rd.dartmouth, ma": {
+    "lat": 41.629871,
+    "lng": -70.9784304
+  },
+  "warren, ma": {
+    "lat": 42.2128632,
+    "lng": -72.1926488
+  },
+  "middleboro, ma": {
+    "lat": 41.8931576,
+    "lng": -70.9111517
+  },
+  "gill, ma": {
+    "lat": 42.6411975,
+    "lng": -72.4993421
+  },
+  "01525, usa": {
+    "lat": 42.10136,
+    "lng": -71.638653
+  },
+  "ma": {
+    "lat": 31.1728205,
+    "lng": -7.3362482
+  },
+  "north attleboro, ma": {
+    "lat": 41.9841334,
+    "lng": -71.3322798
+  },
+  "attleboro, ma": {
+    "lat": 41.9439695,
+    "lng": -71.2804301
+  },
+  "new york city, ny": {
+    "lat": 40.7127281,
+    "lng": -74.0060152
+  },
+  "austin, tx": {
+    "lat": 30.2711286,
+    "lng": -97.7436995
+  },
+  "a-market, ma": {
+    "lat": 33.8038989,
+    "lng": -117.9156941
+  },
+  "09077, usa": {
+    "lat": 30.6972412,
+    "lng": -88.1892334
+  },
+  "allen farm, ma": {
+    "lat": 41.3400017,
+    "lng": -70.7305871
+  },
+  "bartlett farm, ma": {
+    "lat": 41.57799,
+    "lng": -93.816314
+  },
+  "01322, usa": {
+    "lat": 27.4442121,
+    "lng": -82.4668017
+  },
+  "calef’s country store, ma": {
+    "lat": 43.2130528,
+    "lng": -70.996968
+  },
+  "canterbury country store, ma": {
+    "lat": 43.3376884,
+    "lng": -71.5643691
+  },
+  "5745 description predominantly alpine goat herd. animals have access to pasture and forage. supplemental bagged feed is certified organic. all food produced on the farm is free from pesticides, antibiotics": {
+    "lat": 18.6240617,
+    "lng": 73.812777
+  },
+  "connolly brothers dairy farm": {
+    "lat": 42.8494499,
+    "lng": -71.8475141
+  },
+  "0534 description bottled raw cow milk, cream": {
+    "lat": 44.315976,
+    "lng": -91.771905
+  },
+  "crossfit nashua, ma": {
+    "lat": 42.7618783,
+    "lng": -71.4532303
+  },
+  "02766, usa": {
+    "lat": 41.9612279,
+    "lng": -71.1785699
+  },
+  "fitch’s corner farmstand, ma": {
+    "lat": 42.8527749,
+    "lng": -71.6974864
+  },
+  "flying cloud dairy, ma": {
+    "lat": 43.126982,
+    "lng": -72.3441781
+  },
+  "02519, usa": {
+    "lat": 30.6972412,
+    "lng": -88.1892334
+  },
+  "full moon farm, ma": {
+    "lat": 43.6154987,
+    "lng": -71.2374339
+  },
+  "great brook farm, ma": {
+    "lat": 42.4324907,
+    "lng": -71.576871
+  },
+  "henry’s market, ma": {
+    "lat": 34.033103,
+    "lng": -118.2760786
+  },
+  "huckins farm, ma": {
+    "lat": 42.5188203,
+    "lng": -71.2972539
+  },
+  "11 am-7pm, saturdays": {
+    "lat": 40.720776,
+    "lng": -73.9994144
+  },
+  "little woods farm": {
+    "lat": 53.70597,
+    "lng": -2.7865282
+  },
+  "02647, usa": {
+    "lat": 41.6343796,
+    "lng": -70.3105678
+  },
+  "02454, usa": {
+    "lat": 42.3764114,
+    "lng": -71.2366147
+  },
+  "natural choice market, ma": {
+    "lat": 54.0079324,
+    "lng": -1.4663988
+  },
+  "01782, usa": {
+    "lat": 39.7601782,
+    "lng": -75.5244808
+  },
+  "on the vine marketplace, ma": {
+    "lat": 42.9854211,
+    "lng": -70.935613
+  },
+  "06758, usa": {
+    "lat": 41.6754861,
+    "lng": -73.2413047
+  },
+  "salem, nh": {
+    "lat": 42.7884957,
+    "lng": -71.2009035
+  },
+  "storybook farm, ma": {
+    "lat": 43.0088575,
+    "lng": -77.442444
+  },
+  "the herbal path, ma": {
+    "lat": 43.0848738,
+    "lng": -70.7873744
+  },
+  "tiny hill farm, ma": {
+    "lat": 51.5341751,
+    "lng": -0.1519502
+  },
+  "vernon family farm, ma": {
+    "lat": 43.0384062,
+    "lng": -70.9951445
+  },
+  "03349, usa": {
+    "lat": 34.1457269,
+    "lng": -118.1153588
+  },
+  "west street, ma": {
+    "lat": 42.3854186,
+    "lng": -71.0741134
+  },
+  "jewett st, ma": {
+    "lat": 42.2852893,
+    "lng": -71.1173568
+  },
+  "blandford rd, ma": {
+    "lat": 42.1081186,
+    "lng": -72.9019722
+  },
+  "tuttle rd, ma": {
+    "lat": 42.1563444,
+    "lng": -71.7702498
+  },
+  "lower west st, ma": {
+    "lat": 42.1213455,
+    "lng": -73.1390311
+  },
+  "dodge road, ma": {
+    "lat": 42.2519269,
+    "lng": -71.1439173
+  },
+  "fred smith rd, ma": {
+    "lat": 42.6118309,
+    "lng": -71.8596447
+  },
+  "tuttle road, ma": {
+    "lat": 42.1563444,
+    "lng": -71.7702498
+  },
+  "forget rd, ma": {
+    "lat": 42.5843852,
+    "lng": -72.8724864
+  },
+  "middle road, ma": {
+    "lat": 42.8084266,
+    "lng": -71.0356486
+  },
+  "mill valley road, ma": {
+    "lat": 42.3480672,
+    "lng": -72.5443496
+  },
+  "holtshire road, ma": {
+    "lat": 42.5985024,
+    "lng": -72.3412374
+  },
+  "coy hill road, ma": {
+    "lat": 42.2482392,
+    "lng": -72.2064313
+  },
+  "south road, ma": {
+    "lat": 42.2759439,
+    "lng": -71.7637313
+  },
+  "b brookline st, ma": {
+    "lat": 42.3582035,
+    "lng": -71.1071547
+  },
+  "purchase st, ma": {
+    "lat": 41.9028437,
+    "lng": -70.7943958
+  },
+  "main road, ma": {
+    "lat": 42.3911836,
+    "lng": -71.1914979
+  },
+  "loring st.manchester, nh": {
+    "lat": 42.9671748,
+    "lng": -71.4520617
+  },
+  "charlestown road, nh": {
+    "lat": 43.3504616,
+    "lng": -72.3606639
+  },
+  "oak hill lane, nh": {
+    "lat": 42.7067618,
+    "lng": -71.4609005
+  },
+  "indian rock rd.windham, nh": {
+    "lat": 42.8075845,
+    "lng": -71.2600656
+  },
+  "ellsworth rd, nh": {
+    "lat": 43.0635512,
+    "lng": -71.8446527
+  },
+  "josiah bartlett rd.concord, nh": {
+    "lat": 43.2452773,
+    "lng": -71.4672525
+  },
+  "shirley hill rd.goffstown, nh": {
+    "lat": 42.986049,
+    "lng": -71.5457859
+  },
+  "clifford st.exeter, nh": {
+    "lat": 42.9801871,
+    "lng": -70.94503
+  },
+  "sligo rd, nh": {
+    "lat": 43.2125658,
+    "lng": -70.8206744
+  },
+  "west rd.canterbury, nh": {
+    "lat": 43.3355653,
+    "lng": -71.6011623
+  },
+  "martin rd, nh": {
+    "lat": 43.0270134,
+    "lng": -71.0859285
+  },
+  "barrington, nh": {
+    "lat": 43.223191,
+    "lng": -71.047211
+  },
+  "center rd.canterbury, nh": {
+    "lat": 43.3383509,
+    "lng": -71.5741352
+  },
+  "5745 description predominantly alpine goat herd. animals have access to pasture and forage. supplemental bagged feed is certified organic. all food produced on the farm is free from pesticides, antibiotics, usa": {
+    "lat": 36.558554,
+    "lng": -82.1732042
+  },
+  "s. main st.concord, nh": {
+    "lat": 43.1797359,
+    "lng": -71.5309472
+  },
+  "nh": {
+    "lat": 43.4849133,
+    "lng": -71.6553992
   }
 }

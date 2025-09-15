@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2025-09-12T19:45:55.559Z",
-  "count": 26,
+  "generatedAt": "2025-09-15T18:25:23.388Z",
+  "count": 27,
   "locations": [
     {
       "id": "realmilk-massachusetts-carter-and-stevens-farm",
@@ -12,7 +12,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.625Z"
+      "updatedAt": "2025-09-15T18:23:28.088Z",
+      "lat": 42.4228006,
+      "lng": -72.1051592
     },
     {
       "id": "realmilk-massachusetts-chase-hill-farm",
@@ -25,7 +27,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.626Z"
+      "updatedAt": "2025-09-15T18:23:28.089Z",
+      "lat": 42.6839112,
+      "lng": -72.3007813
     },
     {
       "id": "realmilk-massachusetts-clover-luck-farm-dairy",
@@ -38,7 +42,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.626Z"
+      "updatedAt": "2025-09-15T18:23:28.089Z",
+      "lat": 42.6650324,
+      "lng": -71.5785924
     },
     {
       "id": "realmilk-massachusetts-cream-of-the-crop-farm",
@@ -51,7 +57,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.626Z"
+      "updatedAt": "2025-09-15T18:23:28.089Z",
+      "lat": 42.1898446,
+      "lng": -72.8559729
     },
     {
       "id": "realmilk-massachusetts-cricket-creek-farm",
@@ -64,7 +72,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.627Z"
+      "updatedAt": "2025-09-15T18:23:28.090Z",
+      "lat": 42.0977022,
+      "lng": -73.1014489
     },
     {
       "id": "realmilk-massachusetts-crystal-brook-farm",
@@ -77,7 +87,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.627Z"
+      "updatedAt": "2025-09-15T18:23:28.090Z",
+      "lat": 42.4374411,
+      "lng": -71.7601869
     },
     {
       "id": "realmilk-massachusetts-green-wood-farm",
@@ -90,7 +102,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.627Z"
+      "updatedAt": "2025-09-15T18:23:28.090Z",
+      "lat": 42.1115567,
+      "lng": -73.1399665
     },
     {
       "id": "realmilk-massachusetts-herdshare",
@@ -103,7 +117,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:21.627Z"
+      "updatedAt": "2025-09-15T18:23:28.090Z",
+      "lat": 30.6972412,
+      "lng": -88.1892334
     },
     {
       "id": "realmilk-massachusetts-herrick-farm-llc",
@@ -116,7 +132,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.214Z"
+      "updatedAt": "2025-09-15T18:23:28.345Z",
+      "lat": 42.7136977,
+      "lng": -70.8818364
     },
     {
       "id": "realmilk-massachusetts-little-black-cow-dairy-llc",
@@ -129,7 +147,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.214Z"
+      "updatedAt": "2025-09-15T18:23:28.346Z",
+      "lat": 42.5449024,
+      "lng": -71.9107903
     },
     {
       "id": "realmilk-massachusetts-lolans-farm-llc-02346",
@@ -143,7 +163,23 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.215Z"
+      "updatedAt": "2025-09-15T18:23:28.346Z",
+      "lat": 41.8897448,
+      "lng": -70.9054645
+    },
+    {
+      "id": "realmilk-massachusetts-maplebrook-farmstead",
+      "name": "Maplebrook Farmstead",
+      "type": "farm",
+      "address": "155 Tuttle RoadSterling, Massachusetts 01564USA Website http://www.MaplebrookFarmstead.com Description This farm has a micro-dairy of Ayrshire cows",
+      "website": "https://www.realmilk.com/farm-directory/maplebrook-farmstead/",
+      "source": {
+        "name": "RealMilk Directory",
+        "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
+      },
+      "updatedAt": "2025-09-15T18:23:28.346Z",
+      "lat": 42.4374411,
+      "lng": -71.7601869
     },
     {
       "id": "realmilk-massachusetts-meadowsweet-farm",
@@ -156,7 +192,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.215Z"
+      "updatedAt": "2025-09-15T18:23:28.347Z",
+      "lat": 42.5644029,
+      "lng": -72.877557
     },
     {
       "id": "realmilk-massachusetts-mermaid-farm-and-dairy",
@@ -169,7 +207,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.215Z"
+      "updatedAt": "2025-09-15T18:23:28.348Z",
+      "lat": 41.343056,
+      "lng": -70.7440232
     },
     {
       "id": "realmilk-massachusetts-miller-s-organic-farm-carlisle-ma-pickup",
@@ -184,7 +224,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.215Z"
+      "updatedAt": "2025-09-15T18:23:28.349Z",
+      "lat": 45.845947,
+      "lng": -88.0509948
     },
     {
       "id": "realmilk-massachusetts-miller-s-organic-farm-chelsea-ma-pickup",
@@ -199,7 +241,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.216Z"
+      "updatedAt": "2025-09-15T18:23:28.350Z",
+      "lat": 30.6972412,
+      "lng": -88.1892334
     },
     {
       "id": "realmilk-massachusetts-mill-valley-milk-company",
@@ -212,7 +256,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.216Z"
+      "updatedAt": "2025-09-15T18:23:28.351Z",
+      "lat": 42.3423259,
+      "lng": -72.5891221
     },
     {
       "id": "realmilk-massachusetts-north-plain-farm",
@@ -225,7 +271,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.216Z"
+      "updatedAt": "2025-09-15T18:23:28.351Z",
+      "lat": 54.2740908,
+      "lng": -1.2075772
     },
     {
       "id": "realmilk-massachusetts-o-brien-farm",
@@ -236,9 +284,11 @@
       "website": "https://www.realmilk.com/farm-directory/obrien-farm/",
       "source": {
         "name": "RealMilk Directory",
-        "url": "https://www.realmilk.com/farm-directory/page/2/?wpbdm-region=massachusetts"
+        "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.216Z"
+      "updatedAt": "2025-09-15T18:23:28.568Z",
+      "lat": 42.5908656,
+      "lng": -72.3097766
     },
     {
       "id": "realmilk-massachusetts-paskamansett-farms",
@@ -251,7 +301,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.414Z"
+      "updatedAt": "2025-09-15T18:23:28.568Z",
+      "lat": 41.629871,
+      "lng": -70.9784304
     },
     {
       "id": "realmilk-massachusetts-rocky-acres-farm",
@@ -264,7 +316,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.414Z"
+      "updatedAt": "2025-09-15T18:23:28.569Z",
+      "lat": 42.2128632,
+      "lng": -72.1926488
     },
     {
       "id": "realmilk-massachusetts-the-grey-barn",
@@ -277,7 +331,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.414Z"
+      "updatedAt": "2025-09-15T18:23:28.569Z",
+      "lat": 41.343056,
+      "lng": -70.7440232
     },
     {
       "id": "realmilk-massachusetts-the-herb-hill-farm-microdairy",
@@ -290,7 +346,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.414Z"
+      "updatedAt": "2025-09-15T18:23:28.569Z",
+      "lat": 42.6650324,
+      "lng": -71.5785924
     },
     {
       "id": "realmilk-massachusetts-the-hippie-farmer",
@@ -302,7 +360,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.414Z"
+      "updatedAt": "2025-09-15T18:23:28.569Z",
+      "lat": 41.8931576,
+      "lng": -70.9111517
     },
     {
       "id": "realmilk-massachusetts-upinngil",
@@ -315,7 +375,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.415Z"
+      "updatedAt": "2025-09-15T18:23:28.570Z",
+      "lat": 42.6411975,
+      "lng": -72.4993421
     },
     {
       "id": "realmilk-massachusetts-upinngil-land-of-milk-and-honey",
@@ -328,7 +390,9 @@
         "name": "RealMilk Directory",
         "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.415Z"
+      "updatedAt": "2025-09-15T18:23:28.570Z",
+      "lat": 42.6411975,
+      "lng": -72.4993421
     },
     {
       "id": "realmilk-massachusetts-whistle-wind-farm",
@@ -339,9 +403,11 @@
       "website": "https://www.realmilk.com/farm-directory/whistle-wind-farm/",
       "source": {
         "name": "RealMilk Directory",
-        "url": "https://www.realmilk.com/farm-directory/page/3/?wpbdm-region=massachusetts"
+        "url": "https://www.realmilk.com/farm-directory/page/4/?wpbdm-region=massachusetts"
       },
-      "updatedAt": "2025-09-12T19:45:22.415Z"
+      "updatedAt": "2025-09-15T18:23:28.775Z",
+      "lat": 42.10136,
+      "lng": -71.638653
     }
   ]
 }
