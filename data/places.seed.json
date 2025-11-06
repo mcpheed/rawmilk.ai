@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p1",
+    "name": "Happy Cow Farm",
+    "kind": "farm",
+    "phone": "(555) 010-1212",
+    "website": "https://happycowfarm.example",
+    "city": "Uxbridge", "state": "MA", "postcode": "01569",
+    "lat": 42.0770, "lng": -71.6290,
+    "confidence": 0.82
+  },
+  {
+    "id": "p2",
+    "name": "Front Range Co-op",
+    "kind": "co-op",
+    "phone": "(555) 010-7777",
+    "website": "https://frcoop.example",
+    "city": "Denver", "state": "CO", "postcode": "80205",
+    "lat": 39.7580, "lng": -104.9690,
+    "confidence": 0.71
+  },
+  {
+    "id": "p3",
+    "name": "Maple Brook Dairy",
+    "kind": "farm",
+    "phone": "(555) 010-9999",
+    "website": null,
+    "city": "North Attleboro", "state": "MA", "postcode": "02760",
+    "lat": 41.9810, "lng": -71.3335,
+    "confidence": 0.58
+  }
+]
