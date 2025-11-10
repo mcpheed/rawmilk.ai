@@ -1,0 +1,25 @@
+{
+  "name": "@rawmilk/worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/main.ts",
+    "ingest:serp": "tsx src/jobs/ingest-serp.ts --city='Boston' --state='MA' --lat=42.36 --lng=-71.06 --radius=120"
+  },
+  "dependencies": {
+    "bullmq": "^5.9.0",
+    "dotenv": "^16.4.5",
+    "fast-xml-parser": "^4.5.0",
+    "got": "^14.4.2",
+    "libphonenumber-js": "^1.11.10",
+    "node-cache": "^5.1.2",
+    "p-limit": "^5.0.0",
+    "pg": "^8.12.0",
+    "string-similarity": "^4.0.4",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
