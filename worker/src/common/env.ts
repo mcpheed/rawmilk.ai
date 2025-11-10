@@ -1,8 +1,11 @@
-import 'dotenv/config';
-export const env = {
-  DATABASE_URL: process.env.DATABASE_URL!,
-  REDIS_URL: process.env.REDIS_URL || 'redis://localhost:6379',
-  SERPAPI_KEY: process.env.SERPAPI_KEY || '',
-  MAPBOX_TOKEN: process.env.MAPBOX_TOKEN || '',
-  OPENCAGE_KEY: process.env.OPENCAGE_KEY || ''
+import { config } from 'dotenv';
+import { resolve } from 'node:path';
+
+// Load ../.env (repo-root) so DATABASE_URL:5433 and SERPAPI_KEY are seen
+config({ path: resolve(process.cwd(), '../.env') });
+
+export const REQUIRED = (name: string) => {
+  const v = process.env[name];
+  if (!v) throw new Error(`Missing env ${name}`);
+  return v;
 };

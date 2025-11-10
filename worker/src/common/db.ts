@@ -1,3 +1,6 @@
+import './env';              // ensure env is loaded
 import { Pool } from 'pg';
-import { env } from './env';
-export const pool = new Pool({ connectionString: env.DATABASE_URL });
+
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) throw new Error('DATABASE_URL not set');
+export const pool = new Pool({ connectionString });
