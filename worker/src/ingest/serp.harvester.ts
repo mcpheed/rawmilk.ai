@@ -20,7 +20,7 @@ export async function harvestSERP(city: string, state?: string): Promise<SerpRes
   if (!env.SERPAPI_KEY) return [];
   const tasks = TEMPLATES(city, state).map(q => limit(async () => {
     const url = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(q)}&location=${encodeURIComponent(`${city}, ${state ?? ''}`)}&hl=en&num=10&api_key=${env.SERPAPI_KEY}`;
-    const data = await got(url, { timeout: 15000 }).json<any>();
+    const data = await got(url, { timeout: { request: 15000 } }).json<any>();
     return (data.organic_results ?? []).map((r: any) => ({
       url: r.link, title: r.title, snippet: r.snippet,
       source_type: 'serp' as const, source_name: 'google' as const
